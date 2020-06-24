@@ -1,0 +1,105 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  outline: none !important;
+  font-weight: $btn-font-weight;
+  line-height: 1;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  border-radius: 2px;
+  @include button-size($btn-padding-y, $btn-font-size );
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+  :focus{
+    outline: 0 !important;
+  }
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background: $gray-200 !important;
+    color: $gray-500 !important;
+    box-shadow: none;
+
+    >* {
+      pointer-events: none;
+    }
+  }
+}
+
+.btn-default {
+  @include button-size($btn-padding-y-default, $btn-font-size-default);
+}
+
+.btn-bigger {
+  @include button-size($btn-padding-y-bigger, $btn-font-size-bigger);
+}
+
+.btn-large {
+  @include button-size($btn-padding-y-large, $btn-font-size-large);
+}
+
+.btn-small {
+  @include button-size($btn-padding-y-small, $btn-font-size-small);
+}
+
+.btn-mini {
+  @include button-size($btn-padding-y-mini, $btn-font-size-mini);
+}
+
+.btn-primary {
+  @include button-style($primary, $primary, $white)
+}
+
+.btn-danger {
+  @include button-style($danger, $danger, $white)
+}
+
+.btn-vip {
+  @include button-style($vip, $vip, $dark)
+}
+
+.btn-dark {
+  @include button-style($dark, $dark, $vip)
+}
+
+.btn-success {
+  @include button-style($success, $success, $white)
+}
+
+.btn-warning {
+  @include button-style($warning, $warning, $white)
+}
+
+.btn-default {
+  @include button-style($white, $gray-200, $body-color, $white, $primary, $primary)
+}
+
+.btn-link {
+  background-color: $white;
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+
+  &:hover {
+    color: $btn-link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+}
